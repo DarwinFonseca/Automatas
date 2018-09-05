@@ -2,6 +2,7 @@
 
 This is a solution to the problems described in the following file (This file is not my property):
   	http://siteforcodeabbeysolution.atwebpages.com/TC-TallerdeProgramacion.pdf
+	https://github.com/DarwinFonseca/Automatas/blob/master/src/co/edu/uniminuto/teoriasComputacion/resources/TC_-_Taller_de_Programacion.pdf
 	
 
   This program is free software: you can redistribute it and/or modify
