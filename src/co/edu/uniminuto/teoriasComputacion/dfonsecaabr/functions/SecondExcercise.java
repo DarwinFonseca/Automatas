@@ -9,58 +9,35 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
 /**
- * @author DarwinFonck
- *
+ * @author Darwin Gonzalo Fonseca Abril
+ * @id 436354
+ * @nrc 8041 - Teorías de la computación
  */
+
 public class SecondExcercise {
-//a
-//aaaa
-//acacacaca
-//cc
-//ccccc
-//baca
-//acab
-//acaba
-//acabaccccccc
-//acababbbcbcbcbcbcbcbc
-//bb
-//cb
-//cab
-//caba
-//cababbb
-//FIN
-	
-//RESPUESTAS ESPERADAS
-//La expresión regular a no es válida.
-//La expresión regular aaaa no es válida.
-//La expresión regular acacacaca no es válida.
-//La expresión regular cc no es válida.
-//La expresión regular ccccc no es válida.
-//La expresión regular baca no es válida.
-//La expresión regular acab es válida para el autómata, su estado final fué 'q3'.
-//La expresión regular acaba es válida para el autómata, su estado final fué 'q4'.
-//La expresión regular acabaccccccc es válida para el autómata, su estado final fué 'q4'.
-//La expresión regular acababbbcbcbcbcbcbcbc es válida para el autómata, su estado final fué 'q4'.
-//La expresión regular bb es válida para el autómata, su estado final fué 'q3'.
-//La expresión regular cb es válida para el autómata, su estado final fué 'q3'.
-//La expresión regular cab es válida para el autómata, su estado final fué 'q3'.
-//La expresión regular caba es válida para el autómata, su estado final fué 'q4'.
-//La expresión regular cababbb es válida para el autómata, su estado final fué 'q4'.
 
 	public static void main(String[] args) {
-		try {
+		try { // Try catch to control the different exceptions that can be created.
+
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-			String input = br.readLine();
-			String[] inputArray;
+
+			String input = br.readLine(); // This variable receives the first input line
+			String[] inputArray; // Variable of array type to store each value of the string "input"
 
 			while (!input.equals("FIN")) {
-				int counter = 0;
-				int qState = 0;
-				// bw.write(input);
-				inputArray = input.split("");
-				// System.out.println(Arrays.toString(inputArray));
-				while (counter < inputArray.length) {
+
+				int counter = 0; // Control variable
+				int qState = 0; // Variable that represents the state of q
+				inputArray = input.split(""); // Returns an array with the respective values of the string "input"
+
+				while (counter < inputArray.length) { // Go through the array, after each validation, perform a continue
+														// to advance to the next data.
+
+					/*
+					 * For each q-state it evaluates the three possibilities of the language {a, b,
+					 * c} and makes the respective changes to the counter and the states.
+					 */
 					if (qState == 0) { // q0
 						switch (inputArray[counter]) {
 						case "a":
@@ -140,18 +117,25 @@ public class SecondExcercise {
 						}
 					}
 				}
+				/*
+				 * If the final state is equal to any of the acceptance states, the regular
+				 * expression is valid, otherwise it is not.
+				 */
 				if (qState == 3 || qState == 4) {
+					// The br.write(*) method allows to store the answers
 					bw.write("La expresión regular " + input + " es válida para el autómata, su estado final fué 'q"
 							+ qState + "'.\n");
 				} else {
 					bw.write("La expresión regular " + input + " no es válida.\n");
 				}
+				// Read the next line
 				input = br.readLine();
 			}
+			// Show in console all the information stored in bw object
 			bw.flush();
 			br.close();
 			bw.close();
-		} catch (Exception e) {
+		} catch (Exception e) {// Show in console the exceptions
 			e.printStackTrace();
 		}
 	}
