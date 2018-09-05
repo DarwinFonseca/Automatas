@@ -4,8 +4,10 @@
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+	  
+	 https://github.com/DarwinFonseca/Automatas/blob/master/LICENSE
+   
+  This is a solution to the problem described: "Programar un archivo por cada
+	  uno en donde se puedan ingresar cualquier cantidad de cadenas por consola
+	  (una a la vez), y determine si son aceptadas o no por el autómata. Cuando se
+	  ingrese la palabra FIN el programa debe detenerse".
